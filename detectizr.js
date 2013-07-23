@@ -267,7 +267,7 @@
                     device.osVersion = (that.test(/os\s(\d+)_/) ? RegExp.$1 : '').substr(0, 2);
                     if (!device.osVersion) {
                         device.osVersion = (that.test(/android\s(\d+)\./) ? RegExp.$1 : '');
-                        device.osVersionFull = (that.test(/android ([^\s]+)/) ? RegExp.$1.replace(/_/g,'.') : '');
+                        device.osVersionFull = (that.test(/android ([^\s]+)/) ? RegExp.$1.replace(/_/g,'.') : '').replace(';','');
                     }
                     device.os = 'android';
                 } else if (device.model === 'blackberry') {
